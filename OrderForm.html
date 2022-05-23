@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/order.css" />
+    <link rel="icon" href="./images/pngegg.png" type="image/x-icon" />
+    <title>Confirm Order</title>
+  </head>
+  <body>
+    <header>
+      <h1>Confirm order</h1>
+    </header>
+    <main>
+      <div class="pop-up" id="popM">
+        <h2>The order created!</h2>
+        <hr />
+        <p id="address-summary"></p>
+        <br />
+        <p id="customer-summary"></p>
+        <br />
+        <br />
+        <button id="close-btn">close</button>
+      </div>
+      <form id="myForm" action="#">
+        <div class="name-container">
+          <label for="">Name:</label>
+          <div class="input-name">
+            <input type="text" id="field_name" name="" />
+            <p id="warn-pop-up-name" class="warn-pop">* The field is invalid</p>
+          </div>
+        </div>
+        <br />
+        <div class="name-container">
+          <label for="">Surname:</label>
+          <div class="input-surname">
+            <input type="text" id="field_surname" name="" />
+            <p id="warn-pop-up-surname" class="warn-pop">
+              * The field is invalid
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="name-container">
+          <label for="">Delivery date:</label>
+          <div class="input-date">
+            <input type="date" id="field_date" name="" />
+            <p id="warn-pop-up-date" class="warn-pop">* The field is invalid</p>
+          </div>
+        </div>
+        <br />
+        <div class="name-container">
+          <label for="">Street number:</label>
+          <div class="input-street">
+            <input type="text" id="field_street" name="" />
+            <p id="warn-pop-up-street" class="warn-pop">
+              * The field is invalid
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="name-container">
+          <label for="">House number:</label>
+          <div class="input-house">
+            <input type="text" id="field_house" name="" />
+            <p id="warn-pop-up-house" class="warn-pop">
+              * The field is invalid
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="name-container">
+          <label for="">Flat number:</label>
+          <div class="input-flat">
+            <input type="text" id="field_flat" name="" />
+            <p id="warn-pop-up-flat" class="warn-pop">* The field is invalid</p>
+          </div>
+        </div>
+        <br />
+        <div class="name-container special-border">
+          Choose the payment type:<br />
+          <br />
+          <div
+            id="field_payment"
+            tabindex="0"
+            style="
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+            "
+          >
+            <label>
+              <input
+                type="radio"
+                name="cash"
+                value="cash"
+                id="cash-radio"
+                style="margin-left: 5px"
+              />
+              Cash </label
+            ><br />
+            <label>
+              <input
+                style="margin-left: 5px"
+                type="radio"
+                name="card"
+                value="card"
+                id="card-radio"
+              />
+              Card
+            </label>
+          </div>
+          <p id="warn-pop-up-payment" class="warn-pop">
+            * The field is invalid
+          </p>
+        </div>
+        <div>
+          Choose 2 gifts:<br />
+          <br />
+          <label>
+            <input
+              type="checkbox"
+              name="pack"
+              value="pack"
+              id="check-pack"
+              class="check"
+            />
+            Pack as a gift </label
+          ><br />
+          <label>
+            <input
+              type="checkbox"
+              name="postcard"
+              value="postcard"
+              id="check-postcard"
+              class="check"
+            />
+            Add postcard
+          </label>
+          <br />
+          <label>
+            <input
+              type="checkbox"
+              name="discount"
+              value="discount"
+              id="check-discount-radio"
+              class="check"
+            />
+            Provide 2% discount to the next time </label
+          ><br />
+          <label>
+            <input
+              type="checkbox"
+              name="pen"
+              value="pen"
+              id="check-pen"
+              class="check"
+            />
+            Branded pen or pencil
+          </label>
+        </div>
+        <br />
+        <br />
+        <div class="submit-btn-container">
+          <input
+            type="submit"
+            id="btn-submit"
+            name="complete"
+            value="Complete"
+            class="submit-btn"
+          />
+        </div>
+      </form>
+    </main>
+    <script src="./order.js"></script>
+  </body>
+</html>
