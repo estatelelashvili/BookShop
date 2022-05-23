@@ -370,7 +370,7 @@ function appendData(data) {
         specialPriceTag = sumArr.reduce((p, c) => p + c);
         totalPrice.textContent = `Total: ${specialPriceTag}$`;
         console.log(typeof specialPriceTag);
-        titleAll.textContent += slideUpTitle.textContent;
+        // titleAll.textContent += slideUpTitle.textContent;
         btnX.onclick = function () {
           val = parseInt(total.textContent) - parseInt(elmP.textContent);
           total.textContent = val.toString();
