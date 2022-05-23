@@ -1,1 +1,1 @@
-https://estatelelashvili.github.io/BookShop/index.html
+https://estatelelashvili.github.io/BookShop/BooksCatalog.html
