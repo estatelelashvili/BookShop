@@ -1,0 +1,180 @@
+body{
+    background-color: #e8dcB8;
+
+}
+
+
+.input-name{
+  display: flex;
+   margin-left: 53px;
+  }
+.input-surname{
+  display: flex;
+    margin-left: 35px;
+  }
+.input-date{
+  display: flex;
+    margin-left: 7px;
+  }
+.input-street{
+  display: flex;
+    margin-left: 4px;
+  }
+.input-house{
+  display: flex;
+    margin-left: 0;
+  }
+.input-flat{
+  display: flex;
+    margin-left: 16px;
+  }
+  
+  .order-content{
+     
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    border-radius: 5px;
+    background-image:  url("../images/old-paper.jpg");
+  }
+
+  h1{
+    margin-left: 140px;
+    color: #008cba;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+
+.pop-up{
+    display: none;
+    position: fixed;
+    width: 700px;
+    height: 550px;
+    background-color:#b9b29a;
+    top:10%;
+    left: 30%;
+    align-content: center;
+    text-align: center;
+
+}
+
+#address-summary{
+  font-size: 22px;
+}
+
+#customer-summary{
+  font-size: 22px;
+}
+
+#close-btn{
+  top: 150px;
+  left: 50%;
+}
+
+.name-container{
+  display: inline-flex;
+  align-items:center;
+  padding:0;
+}
+
+
+.warn-pop{
+visibility:hidden;
+ background-color: ghostwhite;
+ color:red;
+}
+
+
+
+
+/* CSS imported */
+
+*{
+  box-sizing: border-box;
+}
+
+.invalid {
+  outline: none;
+  border:  2px solid red;
+}
+
+
+.valid {
+  outline: none;
+  border: 2px solid black;
+}
+
+
+.warn-pop-date{
+  /* position: absolute; */
+  left: 14%;
+  /* bottom: -10px; */
+  top: 21px;
+  /* display: none; */
+ background-color: ghostwhite;
+ color:red;
+}
+
+.input-div-cont{
+  display: flex;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+
+.name-container{
+  /* background-color: black; */
+  display: inline-flex;
+  align-items:baseline;
+  /* padding:0; */
+}
+
+p{
+  margin: 0  0 0 15px;
+}
+
+.special-border{
+  border: solid 3px #e8dcb8;
+  display: flex;
+}
+
+.submit-btn-container{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.submit-btn{
+  cursor: not-allowed;
+  background-color: khaki;
+  font-size: 18px;
+    width: 150px;
+    padding: 5px;
+    /* cursor: not-allowed !important; */
+}
+
+
+.submit-btn:disabled {
+  cursor: not-allowed !important;
+ 
+}
