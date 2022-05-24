@@ -1,5 +1,33 @@
 //Submit form
 
+// let orderForm = document.getElementById("order-form");
+
+// let nameN = document.getElementById("input-name");
+// let surName = document.getElementById("input-surname");
+// let testInputName = document.getElementById("test-input-name");
+
+// orderForm.addEventListener("submit", handleForm);
+
+// function handleForm(event) {
+//   event.preventDefault();
+// }
+
+// btnSubmit.onclick = function () {
+
+// };
+
+// let popUpWindow = document.getElementById("popup-window");
+// let nameCopy = document.getElementById("user");
+// let btnComplete = document.getElementById("btn-complete");
+// btnComplete.onclick = () =>{
+//  popUpWindow.style.display = "block";
+// popUpWindow.innerHTML= nameCopy.value;
+// }
+
+// let pop = document.getElementById("popup-window");
+
+// pop.innertext = nameCopy.value;
+
 // NEW INJECTION
 let btnSubmit = document.getElementById("btn-submit");
 let nameField = document.getElementById("field_name");
@@ -8,6 +36,13 @@ let StreetField = document.getElementById("field_street");
 let HouseField = document.getElementById("field_house");
 let FlatField = document.getElementById("field_flat");
 let PaymentField = document.getElementById("field_payment");
+// let validName;
+// let validSurName;
+// let validDate;
+// let validStreet;
+// let validHouse;
+// let validFlate;
+// let validPayment;
 
 let validName = false;
 let validSurName = false;
@@ -85,6 +120,10 @@ SurNameField.addEventListener("focusout", function () {
 
 let dateField = document.getElementById("field_date");
 let warnPopDate = document.getElementById("warn-pop-up-date");
+
+// let userDate = new Date(datePicked);
+// let today = new Date();
+// let tomorrow = today.setDate(tomorrow.getDate() + 1);
 
 dateField.addEventListener("input", checkBTN);
 dateField.addEventListener("mouseleave", function () {
@@ -305,8 +344,8 @@ let PopUp = document.getElementById("popM");
 
 btnSubmit.addEventListener("click", (ev) => {
   // alert("good so far");
-  addressInfo.innerText = `The delivery address is ${StreetField.value} ${HouseField.value} ${FlatField.value}.`;
-  customerInfo.innerText = `Customer ${nameField.value} ${SurNameField.value}.`;
+  addressInfo.innerText = `The delivery address is: ${StreetField.value} ${HouseField.value} ${FlatField.value}.`;
+  customerInfo.innerText = `Customer: ${nameField.value} ${SurNameField.value}.`;
   PopUp.style.display = "block";
   ev.preventDefault();
 });

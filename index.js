@@ -63,11 +63,23 @@ function appendData(data) {
 
   //Cart show/hide toggle button
   let btnToggleCart = document.createElement("button");
+  let btnToggleCartIMG = document.createElement("img");
+  btnToggleCartIMG.className = "btn-ToggleCart-img";
+  btnToggleCartIMG.src = "./images/shopping_bag_icon_153998.ico";
+
   let btnOrder = document.createElement("button");
   let itemCount = 0;
-  btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+  let btnToggleCartText = document.createTextNode("My Bag");
+  let itemCountText = document.createElement("p");
+  itemCountText.textContent = `${itemCount}`;
+  itemCountText.className = "item-count-text";
+  // btnToggleCartText.textContent = ;
+  btnToggleCart.appendChild(btnToggleCartText);
+  btnToggleCart.appendChild(btnToggleCartIMG);
+  btnToggleCart.appendChild(itemCountText);
+  // btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
   btnOrder.textContent = "Confirm order";
-  btnToggleCart.style.cssText = `position: absolute; top: 25%; left: 0; width: 100px`;
+  btnToggleCart.className = "btn-ToggleCart";
   // btnOrder.style.cssText = `position: absolute; top: 25%; left: 0; width: 100px`;
   btnOrder.style.cssText = `position:absolute;  width: 115px; left: 15%;
   bottom: 10px;`;
@@ -96,7 +108,8 @@ function appendData(data) {
     itemCount = 0;
     specialPriceTag = 0;
     totalPrice.textContent = `Total: ${specialPriceTag}$`;
-    btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+    // btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+    itemCountText.textContent = `${itemCount}`;
   };
 
   let specialPriceTag = 0;
@@ -155,7 +168,7 @@ function appendData(data) {
 
   // IMPLEMENT DRAG AND DROP
   cartContainer.addEventListener("dragover", allowDrop);
-  // grandCartCont.addEventListener("dragover", allowDrop);
+  grandCartCont.addEventListener("dragover", allowDrop);
   function allowDrop(ev) {
     ev.preventDefault();
   }
@@ -167,7 +180,7 @@ function appendData(data) {
 
   cartContainer.addEventListener("drop", drop);
   // babyCart.addEventListener("drop", drop);
-  // grandCartCont.addEventListener("drop", drop);
+  grandCartCont.addEventListener("drop", drop);
 
   function drop(ev) {
     let title2 = document.createElement("div");
@@ -215,7 +228,8 @@ function appendData(data) {
       let empArr = [];
       const collection = document.getElementsByClassName("elm-p");
       itemCount = collection.length;
-      btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+      // btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+      itemCountText.textContent = `${itemCount}`;
 
       for (let i = 0; i < collection.length; i++) {
         empArr.push(collection[i].textContent.replace("$", ""));
@@ -239,7 +253,8 @@ function appendData(data) {
         middleRow2.remove();
         const collection = document.getElementsByClassName("elm-p");
         itemCount = collection.length;
-        btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+        // btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+        itemCountText.textContent = `${itemCount}`;
       };
     }
 
@@ -257,6 +272,7 @@ function appendData(data) {
     const overlay = document.createElement("div");
     const text = document.createElement("div");
     const image = document.createElement("img");
+    image.className = "thumbnail-image";
     const title = document.createElement("h4");
     const author = document.createElement("h5");
     const price = document.createElement("span");
@@ -265,16 +281,23 @@ function appendData(data) {
     const slideUpTitle = document.createElement("p");
     const slideUpAuthor = document.createElement("p");
     const btnAddToCart = document.createElement("button");
-
+    const imgAddToCart = document.createElement("img");
+    btnAddToCart.className = "btn-add-2-basket";
+    imgAddToCart.className = "tiny-img";
+    imgAddToCart.src = "./images/shopping_bag_icon_153998.ico";
+    btnAddToCart.appendChild(imgAddToCart);
+    let add2Cartext = document.createTextNode("Add to Bag");
+    add2Cartext.className = "btn-add-2-basket-text-node";
+    btnAddToCart.appendChild(add2Cartext);
     let imagSrc = data[i].imageLink;
     slideUpPrice.className = "slide-up-price";
     slideUpTitle.className = "slide-up-title";
     slideUpAuthor.className = "slide-up-author";
-    btnAddToCart.className = "btn-add-to-cart";
+    // btnAddToCart.className = "btn-add-to-cart";
     slideUpPrice.innerHTML = data[i].price + "$";
     slideUpTitle.innerHTML = data[i].title;
     slideUpAuthor.innerHTML = data[i].author;
-    btnAddToCart.innerHTML = "add to cart";
+    // btnAddToCart.innerHTML = "add to cart";
 
     image.setAttribute("id", `${i}`);
 
@@ -294,15 +317,22 @@ function appendData(data) {
     disPhoto.src = data[i].imageLink;
     descriptionPopUp.innerText = data[i].description;
     detailedInformation.appendChild(btnInfoX);
-    detailedInformation.appendChild(disPhoto);
+    // detailedInformation.appendChild(disPhoto);
     detailedInformation.appendChild(descriptionPopUp);
     detailedInformationContainer.appendChild(detailedInformation);
     fragment.appendChild(detailedInformationContainer);
     /////////////////////////////////////
 
     const btnShowMore = document.createElement("button");
-    btnShowMore.className = "btn-show-more";
-    btnShowMore.innerHTML = "Show more";
+    btnShowMore.className = "btn-add-2-basket";
+    let ShowMoretext = document.createTextNode("Show more");
+    ShowMoretext.className = " ShowMoretext-text-node";
+    const imgMore = document.createElement("img");
+    imgMore.className = "tiny-img2";
+    imgMore.src = "./images/NicePng_eye-black-png_3831917.png";
+    btnShowMore.appendChild(imgMore);
+    btnShowMore.appendChild(ShowMoretext);
+    // btnShowMore.innerHTML = "Show more";
     btnShowMore.addEventListener("click", showDetails);
     function showDetails() {
       if (disableShowMore) {
@@ -357,7 +387,8 @@ function appendData(data) {
         let empArr = [];
         const collection = document.getElementsByClassName("elm-p");
         itemCount = collection.length;
-        btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+        // btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+        itemCountText.textContent = `${itemCount}`;
 
         for (let i = 0; i < collection.length; i++) {
           empArr.push(collection[i].textContent.replace("$", ""));
@@ -382,7 +413,8 @@ function appendData(data) {
           middleRow.remove();
           const collection = document.getElementsByClassName("elm-p");
           itemCount = collection.length;
-          btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+          // btnToggleCart.textContent = `Show Cart of ${itemCount} items`;
+          itemCountText.textContent = `${itemCount}`;
         };
       }
     }
@@ -395,9 +427,10 @@ function appendData(data) {
     text.className = "text";
     title.className = "title";
     author.className = "author";
+    price.className = "price";
     title.innerHTML = data[i].title;
     author.innerHTML = data[i].author;
-    price.innerHTML = data[i].price;
+    price.innerHTML = data[i].price + "$";
     image.src = data[i].imageLink;
 
     card.appendChild(image);
@@ -420,9 +453,30 @@ function appendData(data) {
     container.appendChild(wrapper);
   }
   document.body.addEventListener("dragstart", drag);
+  document.body.addEventListener("dragend", dragEnded);
+  let dragHereMSG = document.createElement("p");
+  dragHereMSG.className = "drag-here-msg";
+  grandCartCont.appendChild(dragHereMSG);
+
+  dragHereMSG.visibility = "hidden";
+  function dragEnded(ev) {
+    // grandCartCont.innerText = "drap here";
+    grandCartCont.style.cssText = "border: none";
+    btnToggleCart.style.visibility = "visible";
+    dragHereMSG.innerText = "";
+    dragHereMSG.visibility = "hidden";
+    // alert("drag started");
+    // alert("tel me when");
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
   function drag(ev) {
+    grandCartCont.style.cssText = "border: silver dashed 2px";
+    btnToggleCart.style.visibility = "hidden";
+    dragHereMSG.innerText = "drop here...";
+    dragHereMSG.visibility = "visible";
     // grandCartCont.innerText = "drap here";
     // btnToggleCart.innerText = "drap here";
+    // alert("drag started");
     agent_1 = ev.target.id;
     ev.dataTransfer.setData("text", ev.target.id);
   }
