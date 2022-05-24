@@ -63,7 +63,7 @@ nameField.addEventListener("input", function () {
   if (/^[A-Za-z]{4,}$/.test(val)) {
     el.className = "valid";
     warnPopName.style.visibility = "hidden";
-    validName = false;
+    validName = true;
   } else {
     el.className = "invalid";
     warnPopName.style.visibility = "visible";
