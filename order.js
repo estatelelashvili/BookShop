@@ -148,7 +148,7 @@ dateField.addEventListener("focusout", function () {
   let today = new Date();
   let datePicked = document.getElementById("field_date").value;
   let userDate = new Date(datePicked);
-  if (datePicked) {
+  if (datePicked  && userDate > today) {
     // console.log(datePicked);
     el.className = "valid";
     warnPopDate.style.visibility = "hidden";
